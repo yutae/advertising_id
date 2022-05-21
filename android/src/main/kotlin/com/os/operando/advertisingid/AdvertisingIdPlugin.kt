@@ -21,7 +21,7 @@ class AdvertisingIdPlugin() : FlutterPlugin, ActivityAware, MethodCallHandler {
         fun registerWith(registrar: Registrar) {
             val channel = MethodChannel(registrar.messenger(), "advertising_id")
             val plugin = AdvertisingIdPlugin()
-            plugin.activity = registrar.activity()
+            plugin.activity = registrar.activity()!!
             channel.setMethodCallHandler(plugin)
         }
     }
